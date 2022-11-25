@@ -1,0 +1,45 @@
+<html>
+<body>
+	<script src="index.js"></script>
+	<script>
+		// Experiment 1. Using Canvas 2D
+
+		var canvas = document.createElement('canvas');
+		canvas.width = 2048; // window.innerWidth;
+		canvas.height = 1450; // window.innerHeight;
+
+		var ctx = canvas.getContext('2d');
+
+
+		document.body.appendChild(canvas);
+
+		function draw() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+			ctx.strokeStyle = 'black';
+			ctx.fillStyle = 'white';
+			for (var i = 0; i < 100000; i++) {
+
+				ctx.beginPath()
+
+				var x = Math.random() * canvas.width;
+				var y = Math.random() * canvas.height;
+
+				var w = Math.random() * canvas.width / 4;
+				var h = Math.random() * canvas.height / 4;
+
+				ctx.rect(x, y, w, h);
+
+				ctx.stroke();
+				ctx.fill();
+
+				rects++;
+			}
+
+		}
+
+		setTimeout(start, 500);
+
+	</script>
+</body>
+</html>
